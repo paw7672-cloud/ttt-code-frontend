@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import Registration from "../pages/Registration";
+import Registration from "../pages/registration";
 
 
 const PaymentForm = () => {

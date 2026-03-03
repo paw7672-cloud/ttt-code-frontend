@@ -11,7 +11,7 @@ import Testimonial from "./pages/testimonial";
 import TermsAndConditions from "./pages/termsandConditions";
 import ReturnRefund from "./pages/returnRefund";
 import PaymentForm from "./component/paymentForm";
-import Signup from "./pages/Registration";
+import Registration from "./pages/registration";
 
 import SubjectCards from "./pages/subjectCards";
 
@@ -30,7 +30,7 @@ function AppRoutes() {
       <Route path="/terms-conditions" element={<TermsAndConditions/>}/>
       <Route path="/return-refund" element={<ReturnRefund/>}/>
       <Route path="/ieeo-payment" element={<PaymentForm/>}/>
-      <Route path ="/ieeo-registration" element={<Signup/>}/>
+      <Route path ="/ieeo-registration" element={<Registration/>}/>
       {/* <Route path ="/login" element={<Login/>}/> */}
       <Route path ="/olympiad" element={<SubjectCards/>}/>
 
