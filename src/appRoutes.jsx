@@ -11,7 +11,7 @@ import Testimonial from "./pages/testimonial";
 import TermsAndConditions from "./pages/termsandConditions";
 import ReturnRefund from "./pages/returnRefund";
 import PaymentForm from "./component/paymentForm";
-import Signup from "./pages/registration";
+import Signup from "./pages/Registration";
 
 import SubjectCards from "./pages/subjectCards";
 
