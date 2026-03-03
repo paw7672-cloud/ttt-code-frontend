@@ -1,7 +1,7 @@
 
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import AppRoutes from "./AppRoutes";
+import AppRoutes from "./appRoutes";
 function App() {
   return (
     <>
