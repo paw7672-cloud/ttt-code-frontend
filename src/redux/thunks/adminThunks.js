@@ -45,27 +45,57 @@ export const sendAllCertificates = createAsyncThunk(
   }
 );
 
-// Download all Certificates 
 export const downloadAllCertificates = createAsyncThunk(
   "admin/downloadAllCertificates",
   async (_, { rejectWithValue }) => {
     try {
-      const res = await axiosInstance.get("/admin/download-all", {
-        responseType: "blob",
-      });
+      const res = await axiosInstance.post("/admin/download");
 
-      const url = window.URL.createObjectURL(new Blob([res.data]));
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", "all-certificates.zip");
-      document.body.appendChild(link);
-      link.click();
+      const users = res.data.users;
+
+      for (const name of users) {
+        const response = await axiosInstance.post(
+          "/admin/download",
+          { name },
+          { responseType: "blob" }
+        );
+
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", `${name}.pdf`);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      }
 
     } catch (err) {
       return rejectWithValue("Download failed");
     }
   }
-  );export const uploadExcel = createAsyncThunk(
+);
+// // Download all Certificates 
+// export const downloadAllCertificates = createAsyncThunk(
+//   "admin/downloadAllCertificates",
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const res = await axiosInstance.post("/admin/download-all", {
+//         responseType: "blob",
+//       });
+
+//       const url = window.URL.createObjectURL(new Blob([res.data]));
+//       const link = document.createElement("a");
+//       link.href = url;
+//       link.setAttribute("download", "all-certificates.zip");
+//       document.body.appendChild(link);
+//       link.click();
+
+//     } catch (err) {
+//       return rejectWithValue("Download failed");
+//     }
+//   }
+  //);
+  export const uploadExcel = createAsyncThunk(
   "admin/uploadExcel",
   async (file, { rejectWithValue }) => {
     try {

@@ -48,22 +48,14 @@ const Footer = () => {
 
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-lg">
               {[
-                { label: "Home", href: "/" },
-                { label: "Privacy ", href: "/privacy" },
-                { label: "Our Courses", href: "/courses" },
-                { label: "Scholarships", href: "/scholarships" },
-                { label: "Schools! Don’t Miss This", href: "/schools" },
-                { label: "Terms of Use", href: "/terms" },
-                { label: "Testimonial", href: "/testimonial" },
-                { label: "Vision & Mission", href: "/vision" },
-                { label: "Why Choose Us", href: "/why" },
-                { label: "Videos", href: "/videos" },
-                { label: "New Year 2026", href: "/newyear" },
-                { label: "Registration", href: "/ieeo-registration" },
-               
-                { label: "Login", href: "/login" },
-                { label: "Terms & Conditions", href: "/terms-conditions" },
-                { label: "Return & Refund", href: "/return-refund" },
+             { label: "Terms of Use", href: "/terms" },
+  { label: "Terms and Conditions", href: "/terms-conditions" },
+  { label: "Privacy & Cookie Policy", href: "/privacy-policy" },
+  { label: "Return Policy", href: "/return-policy" },
+  { label: "Shipping Policy", href: "/shipping-policy" },
+  { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Connect With Us", href: "/connect" },
+  { label: "Feedback", href: "/feedback" },
               ].map((item) => (
                   <Link
     key={item.label}
@@ -82,7 +74,7 @@ const Footer = () => {
             </button>
 
             <p className="mt-8 text-gray-400">
-              Copyright 2025–2026 The True Topper. All rights reserved.
+           Copyright 2022-2023 The True Topper oR All rights reserved. 
             </p>
           </div>
 

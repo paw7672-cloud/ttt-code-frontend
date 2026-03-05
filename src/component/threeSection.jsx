@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBullseye, FaLightbulb, FaCogs } from "react-icons/fa";
-import bigimage from "../assets/bigimage.jpeg";
+import Howtttdifferent from "./howtttdifferent";
 import ThreeSectionBubble from "../layout/threeSectionBubble";
 
 const ThreeSection = () => {
@@ -107,16 +107,13 @@ Materialistic success for everyone.
 
   <div className="relative w-full">
 
-    <img
-      src={bigimage}
-      alt="How TTT is Different"
-      className="w-full 
-                 h-[300px] sm:h-[450px] md:h-[550px] lg:h-[650px] 
-                 object-cover
-                 transition duration-500 ease-in-out
-                 cursor-pointer"
-    />
+  <div className="w-full 
+                h-[300px] sm:h-[450px] md:h-[550px] lg:h-[650px] 
+                flex items-center justify-center">
 
+  <Howtttdifferent />
+
+</div>
   </div>
     <div className="flex justify-center mt-8">
     <button

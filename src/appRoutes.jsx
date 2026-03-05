@@ -14,7 +14,7 @@ import PaymentForm from "./component/paymentForm";
 import Registration from "./pages/registration";
 
 import SubjectCards from "./pages/subjectCards";
-
+import AboutPage from "./component/about/aboutpage";
 function AppRoutes() {
   return (
     <Routes>
@@ -22,7 +22,7 @@ function AppRoutes() {
 
 
         <Route path="/" element={<Home />} />
-<Route path="/privacy" element={<Privacy />} />
+      <Route path="/privacy" element={<Privacy />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/scholarships" element={<Scholarship />} />
       <Route path="/vission" element={<VissionMission />} />
@@ -41,7 +41,11 @@ function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
+ {/* ABOUT US ROUTERS */}
 
+ 
+        <Route path="/aboutus-introduction" element={<AboutPage />} />
+        <Route path="/aboutus-vision" element={<AboutPage />} />
 
     </Routes>
   

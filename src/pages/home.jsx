@@ -5,7 +5,7 @@ import img1 from "../assets/slider1.jpeg";
 import img2 from "../assets/slider2.jpeg";
 import img3 from "../assets/slider3.jpeg";
 
-import AboutSection from "../component/aboutSection";
+
 import ThreeSection from "../component/threeSection";
 import WhyJoin from "../component/whyjoin";
 import DownloadApp from "../component/DownloadApp";
@@ -14,6 +14,7 @@ import SocialMedia from "../component/socialMedia";
 import subjectCards from "./subjectCards";
 import SubjectCards from "./subjectCards";
 import HomeBubbles from "../layout/homeBubble";
+import AboutSection from "../component/about/aboutSection";
 
 const slides = [
   { image: img1 },

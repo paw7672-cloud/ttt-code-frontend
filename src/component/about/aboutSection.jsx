@@ -1,8 +1,9 @@
 import React from "react";
 import { FaRocket, FaBrain, FaGraduationCap } from "react-icons/fa";
 import { GiPencilRuler } from "react-icons/gi";
-import img1 from "../assets/home.jpeg";
-import AboutBubble from "../layout/aboutBubble";
+import baba from "../../assets/baba.jpeg";
+
+import AboutBubble from "../../layout/aboutBubble";
 
 const AboutSection = () => {
   return (
@@ -60,10 +61,10 @@ const AboutSection = () => {
                           hover:scale-105 hover:rotate-0">
 
             <img
-              src={img1}
+              src={baba}
               alt="About The True Topper"
               className="w-full h-full object-cover rounded-2xl shadow-2xl"
-            />
+            /> 
           </div>
 
           {/* FLOATING ICONS */}
