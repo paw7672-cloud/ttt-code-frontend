@@ -107,16 +107,17 @@ const Home = () => {
                   src={slide.image}
                   alt="slide"
                   className="
-                    w-full
-                    h-[200px]
-                    sm:h-[300px]
-                    md:h-[450px]
-                    lg:h-[600px]
-                    xl:h-[650px]
-                    object-cover
-                    rounded-xl
-                    shadow-xl
-                  "
+             
+       w-full
+  h-[200px]
+  sm:h-[300px]
+  md:h-[450px]
+  lg:h-[600px]
+  xl:h-[650px]
+  object-contain
+  rounded-xl
+  shadow-xl
+"
                 />
               </div>
             ))}

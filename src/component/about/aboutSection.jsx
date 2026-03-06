@@ -52,10 +52,12 @@ const AboutSection = () => {
         {/* ================= RIGHT TEXT SECTION ================= */}
         <div className="flex-1 text-center lg:text-left">
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
-                         font-semibold mb-6 md:mb-8 font-serif">
-            About The True Topper
+          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl 
+                         font-semibold mb-6 md:mb-8 font-serif   " >
+            About Us
           </h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
+                         font-semibold mb-6 md:mb-8 font-serif text-yellow-500"   >   The True Topper </h2>
 
           <p className="text-base sm:text-xl font-semibold text-gray-700 leading-relaxed mb-6">
             Hello! We are The True Topper and people call us TTT.
