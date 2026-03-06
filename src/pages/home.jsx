@@ -74,8 +74,13 @@ const Home = () => {
   return (
      <>
     
-       <HomeBubbles/>
-<div className="bg-yellow-400 py-8 md:py-12 relative overflow-hidden">
+
+ <section className="relative w-full h-[650px] overflow-hidden bg-yellow-400">
+
+    <HomeBubbles />
+
+
+
 
 
   {/* ===== FLOATING BUBBLE ===== */}
@@ -195,6 +200,7 @@ const Home = () => {
           `}
         </style>
       </div>
+  </section>
 
       {/* ================= OTHER SECTIONS ================= */}
       <AboutSection />
@@ -211,7 +217,7 @@ const Home = () => {
       {/* <DownloadApp />
       <MediaGallery /> */}
       <SocialMedia />
-    </div>
+
      </>
   );
 };

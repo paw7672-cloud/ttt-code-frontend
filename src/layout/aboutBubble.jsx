@@ -1,128 +1,169 @@
 import React, { useState } from "react";
 
 const AboutBubble = () => {
-  const [active, setActive] = useState(null);
-  const [visible, setVisible] = useState({
-    1: true,
-    2: true,
+  const [visibleBubbles, setVisibleBubbles] = useState({
+    left: true,
+    right: true,
   });
 
+  const [activeModal, setActiveModal] = useState(null);
+
   const bubbleStyles = `
-    @keyframes floatLeft {
-      0% { transform: translate(0px,0px); }
-      50% { transform: translate(30px,-40px); }
-      100% { transform: translate(0px,0px); }
+  @keyframes floatLeft {
+    0% { transform: translate(0px,0px); }
+    50% { transform: translate(30px,-40px); }
+    100% { transform: translate(0px,0px); }
+  }
+
+  @keyframes floatRight {
+    0% { transform: translate(0px,0px); }
+    50% { transform: translate(-30px,35px); }
+    100% { transform: translate(0px,0px); }
+  }
+
+  .bubble-style {
+    background: rgba(255, 212, 42, 0.25);
+    border: 2px solid #FFD42A;
+    transition: all 0.4s ease;
+  }
+
+  .bubble-container:hover .close-btn {
+    opacity: 1;
+  }
+
+  @keyframes modalPop {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
     }
-
-    @keyframes floatRight {
-      0% { transform: translate(0px,0px); }
-      50% { transform: translate(-30px,35px); }
-      100% { transform: translate(0px,0px); }
-    }
-
-    .bubble-style {
-
-background: rgba(255, 212, 42, 0.25);
-      border: 2px solid #FFD42A;
-
-      box-shadow: none !important;
-      backdrop-filter: none !important;
-
-      transition: all 0.4s ease;
-    }
-
-    .bubble-container:hover .close-btn {
+    to {
+      transform: scale(1);
       opacity: 1;
     }
+  }
   `;
 
-  const toggleBubble = (id) => {
-    setActive(active === id ? null : id);
-  };
-
-  const removeBubble = (id) => {
-    setVisible((prev) => ({ ...prev, [id]: false }));
-    if (active === id) setActive(null);
+  const removeBubble = (side) => {
+    setVisibleBubbles((prev) => ({
+      ...prev,
+      [side]: false,
+    }));
   };
 
   return (
     <>
-      {visible[1] && (
-        <div className="bubble-container absolute top-[25%] left-[6%] z-[999]">
+      {/* LEFT BUBBLE */}
+      {visibleBubbles.left && (
+        <div className="bubble-container absolute top-[25%] left-[6%] z-30">
           <div
-            onClick={() => toggleBubble(1)}
-            className={`${
-              active === 1 ? "w-[420px] h-[420px]" : "w-[280px] h-[280px]"
-            } relative rounded-full flex flex-col items-center justify-center
-            cursor-pointer hover:scale-105
-            animate-[floatLeft_14s_infinite_ease-in-out]
-            bubble-style`}
+            onClick={() => setActiveModal("left")}
+            className="relative w-[260px] h-[260px] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 animate-[floatLeft_14s_infinite_ease-in-out] bubble-style"
           >
-            <h1 className="text-yellow-500 font-bold text-xl text-center">
-             Schools and Educational Institutions! Don’t Miss This 
+            <h1 className="text-yellow-600 font-bold text-xl text-center px-6">
+              Schools & Educational Institutions
             </h1>
 
-            {active === 1 && (
-              <p className="text-gray-800 mt-4 px-8 text-center">
-               TTT: The True Buddy of Schools and Educational Institutions
-Yes. TTT cares for the Educational institutions, their management and teachers as well. We understand that majority of you are really doing very good work but due to certain reasons, as discussed below, many times you encounter difficult situations which adversely impact the brand value of your school. This is where the TTT comes into your lives.
-
-The Challenge before the Schools and Educational Institutions
-•	A student remains in the school or an educational institution for limited time and majority of his time is spent at home with the family.
-•	Major part of student’s personality gets shaped by the experiences which he/she has from the family members, society, friends and relatives. 
-•	But, unfortunately, when a student performs badly, academically or otherwise, it is the school that is being blamed though the reason for that bad performance could be his family or society.  
-•	This negatively impacts the brand value of the school. 
-•	But the schools are helpless beyond a point because they are already overburdened. They can’t cover all the dimensions of the student’s personality: social, emotional, psychological, physical, mental, spiritual. 
-•	So the unfortunate scenario is that the schools are being blamed and punished for the mistake which they have not committed. 
-
-The Solution
-TTT comes here as the one-stop solution for these problems with its unique Programs that would be a win-win situation for
-•	Students
-•	Parents
-•	Schools and educational institutions
-TTT will act as the Buddy of the Schools and educational institutions that will
-o	complement
-and
-o	supplement 
-the efforts of the schools in preparing their students for the future with its unique Programs which we term as 
-              </p>
-            )}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                removeBubble("left");
+              }}
+              className="close-btn absolute top-4 right-4 bg-white text-black w-8 h-8 rounded-full shadow-md flex items-center justify-center text-sm opacity-0 transition duration-300 hover:bg-red-500 hover:text-white"
+            >
+              ✕
+            </button>
           </div>
         </div>
       )}
 
-      {visible[2] && (
-        <div className="bubble-container absolute top-[30%] right-[6%] z-[999]">
+      {/* RIGHT BUBBLE */}
+      {visibleBubbles.right && (
+        <div className="bubble-container absolute top-[30%] right-[6%] z-30">
           <div
-            onClick={() => toggleBubble(2)}
-            className={`${
-              active === 2 ? "w-[420px] h-[420px]" : "w-[300px] h-[300px]"
-            } relative rounded-full flex flex-col items-center justify-center
-            cursor-pointer hover:scale-105
-            animate-[floatRight_16s_infinite_ease-in-out]
-            bubble-style`}
+            onClick={() => setActiveModal("right")}
+            className="relative w-[260px] h-[260px] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 animate-[floatRight_16s_infinite_ease-in-out] bubble-style"
           >
-            <h1 className="text-yellow-500 font-bold text-xl text-center">
-          Choose from UNLIMITED number of Programs! 
+            <h1 className="text-yellow-600 font-bold text-xl text-center px-6">
+              Unlimited Programs
             </h1>
 
-            {active === 2 && (
-          <p className="text-2xl text-blue-900 mt-4 px-8 text-center">
-                Yes, you heard it right! We are not joking. 
-There is actually no limit to the Programs that TTT offers you.  At TTT, 
-you can choose your program from an infinite choice of programs. We term these programs as TTT CUPs. 
-              </p>
-            )}
-          </div>
-                <button
+            <button
               onClick={(e) => {
                 e.stopPropagation();
-                removeBubble(2);
+                removeBubble("right");
               }}
-              className="close-btn absolute top-5 right-5 bg-white text-black w-8 h-8 rounded-full shadow-md flex items-center justify-center text-sm opacity-0 transition duration-300 hover:bg-red-500 hover:text-white"
+              className="close-btn absolute top-4 right-4 bg-white text-black w-8 h-8 rounded-full shadow-md flex items-center justify-center text-sm opacity-0 transition duration-300 hover:bg-red-500 hover:text-white"
             >
               ✕
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* MODAL */}
+      {activeModal && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-[999]">
+          <div
+            className="bg-white rounded-2xl p-8 w-[90%] max-w-[650px] text-center shadow-2xl relative max-h-[80vh] overflow-y-auto"
+            style={{ animation: "modalPop 0.3s ease" }}
+          >
+            <button
+              onClick={() => setActiveModal(null)}
+              className="absolute top-4 right-4 text-gray-600 hover:text-black text-xl"
+            >
+              ✕
+            </button>
+
+            {/* LEFT MODAL */}
+            {activeModal === "left" && (
+              <>
+                <h2 className="text-3xl font-bold mb-6 text-yellow-500">
+                  TTT: The True Buddy of Schools
+                </h2>
+
+                <p className="text-gray-700 text-left leading-relaxed">
+                  TTT cares for the Educational Institutions, their
+                  management and teachers. Many schools face challenges
+                  affecting their brand value due to external factors.
+                </p>
+
+                <ul className="text-left mt-4 space-y-2 text-gray-700">
+                  <li>• Students spend most time at home</li>
+                  <li>• Personality shaped by society & family</li>
+                  <li>• Schools often blamed for poor performance</li>
+                  <li>• Schools cannot cover every personality dimension</li>
+                </ul>
+
+                <p className="text-gray-700 mt-4 text-left">
+                  TTT provides programs to complement and support the
+                  efforts of schools in preparing students for the future.
+                </p>
+              </>
+            )}
+
+            {/* RIGHT MODAL */}
+            {activeModal === "right" && (
+              <>
+                <h2 className="text-3xl font-bold mb-6 text-yellow-500">
+                  Unlimited Programs
+                </h2>
+
+                <p className="text-gray-700 text-lg">
+                  Yes, you heard it right! There is no limit to the
+                  programs offered by TTT.
+                </p>
+
+                <p className="text-gray-700 mt-4">
+                  You can choose your program from an infinite range
+                  of learning programs known as TTT CUPs.
+                </p>
+
+                <p className="text-blue-900 font-semibold mt-6 text-xl">
+                  Choose from unlimited possibilities.
+                </p>
+              </>
+            )}
+          </div>
         </div>
       )}
 

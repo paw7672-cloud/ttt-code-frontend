@@ -1,4 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import big1 from "../../assets/bigimage/big1.jpeg";
+import big2 from "../../assets/bigimage/big2.jpeg";
+import big3 from "../../assets/bigimage/big3.jpeg";
+import big4 from "../../assets/bigimage/big4.jpeg";
+import big5 from "../../assets/bigimage/big5.jpeg";
+import big6 from "../../assets/bigimage/big6.jpeg";
+import big7 from "../../assets/bigimage/big7.jpeg";
 
 const howtttdifferent = () => {
   const canvasRef = useRef(null);
@@ -14,15 +21,21 @@ const howtttdifferent = () => {
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
-    const data = [
-      { text: "Choose from INFINITE Programs", color: "#49bad3", icon: "🌐", img: "https://picsum.photos/id/1/200/200", h: 0 },
-      { text: "Enroll for Unique Programs", color: "#2d98b1", icon: "📋", img: "https://picsum.photos/id/10/200/200", h: 0 },
-      { text: "Concept of Integration", color: "#406d85", icon: "⚙️", img: "https://picsum.photos/id/20/200/200", h: 0 },
-      { text: "TTT MAP", color: "#4a5568", icon: "🗺️", img: "https://picsum.photos/id/30/200/200", h: 0 },
-      { text: "ABCDL Model", color: "#f55a67", icon: "🖥️", img: "https://picsum.photos/id/40/200/200", h: 0 },
-      { text: "Post Program Support", color: "#bc4b51", icon: "👤", img: "https://picsum.photos/id/50/200/200", h: 0 },
-      { text: "Detailed Feedbacks", color: "#8b5e61", icon: "💬", img: "https://picsum.photos/id/60/200/200", h: 0 }
-    ];
+   const data = [
+  { text: "Choose from INFINITE Programs", color: "#49bad3", icon: "🌐", img: big1, h: 0 },
+
+  { text: "Enroll for Unique Programs", color: "#2d98b1", icon: "📋", img: big2, h: 0 },
+
+  { text: "Concept of Integration", color: "#406d85", icon: "⚙️", img: big3, h: 0 },
+
+  { text: "TTT MAP", color: "#4a5568", icon: "🗺️", img: big4, h: 0 },
+
+  { text: "ABCDL Model", color: "#f55a67", icon: "🖥️", img: big5, h: 0 },
+
+  { text: "Post Program Support", color: "#bc4b51", icon: "👤", img: big6, h: 0 },
+
+  { text: "Detailed Feedbacks", color: "#8b5e61", icon: "💬", img: big7, h: 0 }
+];
 
     const images = data.map(item => {
       const img = new Image();

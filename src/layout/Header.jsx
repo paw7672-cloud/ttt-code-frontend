@@ -64,19 +64,24 @@ useEffect(() => {
       dropdown: [ 
         { name: "Introduction", path: "/aboutus-introduction" },
         { name: "Vision and Mission", path: "/aboutus-vision" },
-        { name: "The Concept", path: "/aboutus/concept" },
+        { name: "The Concept", path: "/aboutus-concept" },
         { name: "Team TTT!", path: "/aboutus/team" },
         { name: "Advisory Board", path: "/aboutus/advisory" },
       ],
     },
-  { name: " How TTT is different ", path: "/howtt" },
+
+
+
+  { name: " How TTT is different ", path: "/howdifferent" },
+
+
   {
   name: "Our Courses",
   dropdown: [
-    { name: "We Don’t Offer Courses!", path: "/courses/no-courses" },
-    { name: "Various Modules", path: "/courses/modules" },
-    { name: "Design Your Unique TTT CUP", path: "/courses/design-cup" },
-    { name: "Our Popular Programs", path: "/courses/popular" },
+    { name: "We Don’t Offer Courses!", path: "/courses" },
+    { name: "Various Modules", path: "/courses-modules" },
+  { name: "Design Your Unique TTT CUP", path: "/design-cup" },
+   { name: "Our Popular Programs", path: "our-programs" }
   ],
 },
     
@@ -174,7 +179,7 @@ useEffect(() => {
   ];
 
 return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-[#FFD42A] to-[#FFC107] shadow-lg px-3 lg:px-3 py-2">
+  <header className="sticky top-0 z-50 bg-gradient-to-r from-[#FFD42A] to-[#FFC107] shadow-md px-3 py-1">
 <div className="w-full bg-gradient-to-r from-[#FFD42A] to-[#FFC107] py-0 px-0">
  
  <div className="max-w-[550px] mx-auto flex flex-col md:flex-row items-center gap-3">
@@ -260,7 +265,7 @@ return (
       <div className="max-w-[1600px] mx-auto flex justify-between items-center">
 
         {/* LOGO */}
-          <NavLink to="/" className="flex items-center group">
+        <NavLink to="/" className="flex items-center group -mt-12">
         <div className="flex items-center">
           <img
             src={logo}
