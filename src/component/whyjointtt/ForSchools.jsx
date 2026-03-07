@@ -37,26 +37,23 @@ const ForSchools = () => {
           <div className="flex items-center gap-3 mb-4">
             <School className="text-blue-600" size={30} />
             <h3 className="text-2xl font-bold text-gray-800">
-              TTT: The True Buddy of Schools
+             The True Buddy of Schools and Educational Institutions
             </h3>
           </div>
 
           <p className="text-gray-700 leading-relaxed">
-            TTT cares deeply for educational institutions, their management and teachers.
-            We understand that many schools are doing excellent work but still face
-            challenges which sometimes affect their reputation and brand value.
+          Yes. TTT cares for the Educational institutions, their management and teachers as well. We understand that majority of you are really doing very good work but due to certain reasons, as discussed below, many times you encounter difficult situations which adversely impact the brand value of your school. 
+          This is where the<strong>TTT</strong> comes into your lives.
           </p>
 
-          <p className="text-gray-700 mt-4 leading-relaxed">
-            This is where <strong>TTT</strong> comes in as a trusted partner to support
-            schools in shaping students for a better future.
-          </p>
 
         </div>
 
         {/* Challenges Section */}
         <h3 className="text-3xl font-bold text-center text-gray-800 mb-10">
-          The Challenge before Schools
+       
+The Challenge before the Schools and Educational Institutions
+
         </h3>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -84,8 +81,8 @@ const ForSchools = () => {
           </h3>
 
           <p className="text-gray-700 mb-6">
-            TTT provides a one-stop solution with its unique programs designed
-            to create a win-win situation for:
+         TTT comes here as the one-stop solution for these problems with its 
+         unique Programs that would be a win-win situation for
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mb-6">
@@ -101,17 +98,39 @@ const ForSchools = () => {
             ))}
 
           </div>
+<div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition mt-12">
 
-          <p className="text-gray-700 leading-relaxed">
-            TTT works as a <strong>True Buddy</strong> for schools by 
-            <strong> complementing</strong> and <strong>supplementing</strong>
-            their efforts in preparing students for the future through
-            innovative programs called <strong>TTT CUP</strong>.
-          </p>
-          <p>The result will be holistic development of students 
-            who will conquer the world and will build the brand value of the school and educational institutions.
-            
-          </p>
+  <h3 className="text-3xl font-bold text-center text-gray-800 mb-8">
+    TTT – A True Buddy for Schools
+  </h3>
+
+  <p className="text-gray-700 leading-relaxed text-center mb-6">
+    TTT will act as the <strong>Buddy</strong> of the Schools and Educational
+    Institutions that will
+  </p>
+<ul className="flex justify-center gap-6 mt-6 flex-wrap">
+
+  <li className="px-6 py-3 rounded-full bg-blue-100 text-blue-700 font-semibold shadow-sm hover:scale-105 transition">
+    Complement
+  </li>
+
+  <li className="px-6 py-3 rounded-full bg-green-100 text-green-700 font-semibold shadow-sm hover:scale-105 transition">
+    Supplement
+  </li>
+
+</ul>
+  
+<p className="text-center text-lg text-gray-700 leading-relaxed mt-6 max-w-3xl mx-auto p-6 rounded-xl bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 shadow-sm">
+  The efforts of the schools in preparing their students for the future
+  with its unique programs which we term as{" "}
+  <span className="font-bold text-purple-700 text-xl">TTT CUP</span>.
+</p>
+
+</div>
+   <p className="text-center text-lg font-medium text-gray-700 mt-6 max-w-3xl mx-auto bg-green-50 border border-green-200 p-6 rounded-xl shadow-sm">
+  The result will be <span className="font-semibold text-green-700">holistic development of students</span> 
+  who will conquer the world and build the brand value of the schools and educational institutions.
+</p>
 
 
         </div>

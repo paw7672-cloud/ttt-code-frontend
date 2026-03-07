@@ -6,7 +6,7 @@ import Home from "./pages/home";
 import Privacy from "./pages/privacy";
 
 import Scholarship from "./pages/scholarship";
-import VissionMission from "./pages/vissionMission";
+// import VissionMission from "./pages/vissionMission";
 import Testimonial from "./pages/testimonial";
 import TermsAndConditions from "./pages/termsandConditions";
 import ReturnRefund from "./pages/returnRefund";
@@ -26,6 +26,7 @@ import ForSchools from "./component/whyjointtt/ForSchools";
 import ForCorporates from "./component/whyjointtt/forCorporates";
 import ForParents from "./component/whyjointtt/forParents";
 import ContactUs from "./component/contactUs/contactusPage";
+import SearchResults from "./pages/searchResults";
 
 function AppRoutes() {
   return (
@@ -37,7 +38,7 @@ function AppRoutes() {
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/courses" element={<Courses />} />
       <Route path="/scholarships" element={<Scholarship />} />  
-      <Route path="/vission" element={<VissionMission />} />
+      {/* <Route path="/vission" element={<VissionMission />} /> */}
       <Route path="/testimonial" element={<Testimonial/>}/>
       <Route path="/terms-conditions" element={<TermsAndConditions/>}/>
       <Route path="/return-refund" element={<ReturnRefund/>}/>
@@ -73,7 +74,7 @@ function AppRoutes() {
 <Route path="/courses-modules" element={<VariousModules/>}/>
 
 <Route path="/design-cup" element={<DesignCup />} />
-<Route path="our-programs"element={<OurPrograms/>}/>
+<Route path="/our-programs"element={<OurPrograms/>}/>
 
  {/* Why join TTT */}
 
@@ -86,6 +87,9 @@ function AppRoutes() {
 
 <Route path="/connect/contact" element={<ContactUs/>}/>
 
+
+
+<Route path="/search" element={<SearchResults/>}/>
 
     </Routes>
   

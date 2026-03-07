@@ -60,7 +60,7 @@ const AboutBubble = () => {
             className="relative w-[260px] h-[260px] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 animate-[floatLeft_14s_infinite_ease-in-out] bubble-style"
           >
             <h1 className="text-yellow-600 font-bold text-xl text-center px-6">
-              Schools & Educational Institutions
+            Enroll for a Program that no one else on Earth has enrolled for
             </h1>
 
             <button
@@ -116,30 +116,53 @@ const AboutBubble = () => {
 
             {/* LEFT MODAL */}
             {activeModal === "left" && (
-              <>
-                <h2 className="text-3xl font-bold mb-6 text-yellow-500">
-                  TTT: The True Buddy of Schools
-                </h2>
+  <>
+    <h2 className="text-3xl font-bold mb-6 text-yellow-500">
+      When You Are Unique, Why Should Your Programs Be Ordinary?
+    </h2>
 
-                <p className="text-gray-700 text-left leading-relaxed">
-                  TTT cares for the Educational Institutions, their
-                  management and teachers. Many schools face challenges
-                  affecting their brand value due to external factors.
-                </p>
+    <div className="text-left text-gray-700 space-y-4 leading-relaxed">
 
-                <ul className="text-left mt-4 space-y-2 text-gray-700">
-                  <li>• Students spend most time at home</li>
-                  <li>• Personality shaped by society & family</li>
-                  <li>• Schools often blamed for poor performance</li>
-                  <li>• Schools cannot cover every personality dimension</li>
-                </ul>
+      <p>
+        We don't offer “one same course” designed by someone who doesn’t
+        know anything about you and your requirements.
+      </p>
 
-                <p className="text-gray-700 mt-4 text-left">
-                  TTT provides programs to complement and support the
-                  efforts of schools in preparing students for the future.
-                </p>
-              </>
-            )}
+      <p>
+        At TTT, on the contrary, you learn from programs which are designed
+        by you, for yourself, based completely on your requirements and
+        needs.
+      </p>
+
+      <p>
+        Of course, our experts are always there to guide and help you in
+        designing these programs in the best possible way.
+      </p>
+
+      <p>
+        You are no longer a part of the crowd where lakhs of students go
+        through the same course.
+      </p>
+
+      <p>
+        With TTT, there is a very high probability that you might be doing
+        a unique program which only you are doing on the entire planet!
+      </p>
+
+      <p className="pt-2">
+        For more details, please explore further.
+      </p>
+
+      <div className="pt-4">
+        <button className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg">
+          Learn More
+        </button>
+      </div>
+
+    </div>
+  </>
+)}
+           
 
             {/* RIGHT MODAL */}
             {activeModal === "right" && (

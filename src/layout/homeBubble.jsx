@@ -63,7 +63,7 @@ const bubbleStyles = `
             className="relative w-[250px] h-[250px] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 animate-[floatSmooth_10s_infinite_ease-in-out] bubble-style"
           >
             <h1 className="text-xl font-bold text-yellow-400 text-center">
-              Open Info
+           Schools and Educational Institutions! Don’t Miss This 
             </h1>
 
             <button
@@ -87,7 +87,7 @@ const bubbleStyles = `
             className="relative w-[250px] h-[250px] rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition duration-300 animate-[floatSmooth_14s_infinite_ease-in-out] bubble-style"
           >
             <h1 className="text-xl font-bold text-yellow-400 text-center">
-              How TTT is Different
+            Choose from UNLIMITED number of Programs! 
             </h1>
 
             <button
@@ -118,36 +118,83 @@ const bubbleStyles = `
             </button>
 
             {/* LEFT MODAL CONTENT */}
-            {activeModal === "left" && (
-              <>
-                <h2 className="text-3xl font-bold mb-6 text-yellow-500">
-                  Program Information
-                </h2>
+           {activeModal === "left" && (
+  <>
+    <h2 className="text-3xl font-bold mb-6 text-yellow-500">
+      Program Information
+    </h2>
 
-                <p className="text-gray-600 mb-4">
-                  Our programs are designed to help individuals and organizations
-                  build strong learning systems and improve performance.
-                </p>
+    <div className="text-left text-gray-700 space-y-4 max-h-[60vh] overflow-y-auto pr-2">
 
-                <ul className="text-left text-gray-700 space-y-2 mt-4">
-                  <li>✔ Professional Training Programs</li>
-                  <li>✔ Practical Learning Approach</li>
-                  <li>✔ Expert Trainers & Mentors</li>
-                  <li>✔ Industry Relevant Skills</li>
-                  <li>✔ Continuous Learning Support</li>
-                </ul>
+      <p className="leading-relaxed">
+        <strong>The True Buddy of Schools and Educational Institutions</strong>
+      </p>
 
-                <button className="mt-6 bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg">
-                  Learn More
-                </button>
-              </>
-            )}
+      <p className="leading-relaxed">
+        Yes, TTT cares for educational institutions, their management and teachers.
+        We understand that many schools are doing excellent work but sometimes
+        face difficult situations that affect the brand value of the institution.
+        This is where TTT becomes a strong support system.
+      </p>
+
+      <p className="font-semibold text-gray-900">
+        The Challenge before Schools and Educational Institutions
+      </p>
+
+      <p>✔ A student stays in school for limited hours while most of the time is spent at home.</p>
+
+      <p>✔ A large part of the student's personality is shaped by family, society, friends and relatives.</p>
+
+      <p>✔ When a student performs poorly academically or behaviorally, schools are often blamed.</p>
+
+      <p>✔ This negatively affects the reputation and brand value of the institution.</p>
+
+      <p>✔ Schools are already overburdened and cannot always address all personality dimensions like social, emotional, psychological, physical, mental and spiritual growth.</p>
+
+      <p>✔ As a result, schools are sometimes blamed for issues beyond their control.</p>
+
+      <p className="font-semibold text-gray-900">
+        The Solution
+      </p>
+
+      <p>
+        TTT offers a one-stop solution through its unique programs that create
+        a win-win situation for:
+      </p>
+
+      <p>✔ Students</p>
+      <p>✔ Parents</p>
+      <p>✔ Schools and Educational Institutions</p>
+
+      <p>
+        TTT acts as a strong buddy for schools by complementing and
+        supplementing their efforts in preparing students for the future
+        through its innovative program structure known as <strong>TTT CUP</strong>.
+      </p>
+
+      <p className="font-semibold text-gray-900">Program Highlights</p>
+
+      <p>✔ Professional Training Programs</p>
+      <p>✔ Practical Learning Approach</p>
+      <p>✔ Expert Trainers & Mentors</p>
+      <p>✔ Industry Relevant Skills</p>
+      <p>✔ Continuous Learning Support</p>
+
+      <div className="pt-4">
+        <button className="bg-yellow-400 hover:bg-yellow-500 text-white px-6 py-2 rounded-lg">
+          Learn More
+        </button>
+      </div>
+
+    </div>
+  </>
+)}
 
             {/* RIGHT MODAL CONTENT */}
             {activeModal === "right" && (
               <>
                 <h2 className="text-3xl font-bold mb-6 text-yellow-500">
-                  How TTT is Different
+              Choose from UNLIMITED number of Programs! 
                 </h2>
 
                 <p className="text-gray-600 mb-4">

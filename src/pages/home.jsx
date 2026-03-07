@@ -6,7 +6,7 @@ import img2 from "../assets/slider2.jpeg";
 import img3 from "../assets/slider3.jpeg";
 
 
-import ThreeSection from "../component/threeSection";
+import ThreeSection from "../component/about/threeSection";
 import WhyJoin from "../component/whyjoin";
 import DownloadApp from "../component/DownloadApp";
 import MediaGallery from "../component/mediaGallery";

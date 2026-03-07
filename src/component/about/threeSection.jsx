@@ -1,6 +1,6 @@
 import React from "react";
 import { Target, Lightbulb, Settings } from "lucide-react";
-import TttImage from "./tttDifferent/tttImage";
+import TttImage from "../tttDifferent/tttImage";
 
 const cards = [
   {
@@ -46,10 +46,11 @@ const colors = {
 
  function ThreeSection() {
   return (
-    <div className="bg-white px-6 py-6">
+    <div className="bg-white px-6 py-6  ">
 
       {/* ===== CARDS SECTION ===== */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
+<div className="bg-gradient-to-r from-[#FFD42A] to-[#FFC107] px-4 py-4 "> 
+      <div className="max-w-6xl mx-auto  flex flex-col md:flex-row gap-8">
 
         {cards.map((card, i) => {
           const Icon = card.icon;
@@ -104,7 +105,7 @@ const colors = {
             </a>
           );
         })}
-
+</div>
       </div>
 
 

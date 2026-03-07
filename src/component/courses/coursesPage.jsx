@@ -33,10 +33,10 @@ const Courses = () => {
           </p>
 
           <p className="text-gray-700 mb-8 leading-relaxed">
-            Quite often such courses make students dependent on platforms
-            instead of empowering them and building their own capabilities.
+            Quite often, such courses are designed to make students dependent on those platforms rather 
+            than working on their capacity building and empowering them. 
           </p>
-
+<p className="text-gray-700 mb-8 leading-relaxed">  In the ultimate analysis the harm that such courses do is much more than the good they bring. </p>
           <h3 className="text-xl font-semibold mb-4 text-gray-800">
             Most pre-designed courses are:
           </h3>
@@ -63,7 +63,8 @@ const Courses = () => {
 
           <p className="text-gray-700 leading-relaxed mb-6">
             TTT offers <strong>TTT CUPs (Customised Unique Programs)</strong>.
-            These are unique programs designed by YOU with guidance from Team TTT.
+       TTT CUPs are the unique programs that are designed by YOU based on a set of variety of guiding methodologies and techniques, in active cooperation and guidance from the Team TTT.  These TTT CUPs are designed on the basis of your specific requirements, 
+       strengths, weaknesses, your aspirations, goals, targets, and the unique challenges being faced by you.  
           </p>
 
           <p className="text-gray-700 leading-relaxed">
@@ -82,10 +83,10 @@ const Courses = () => {
             </h3>
 
             <ul className="space-y-2 text-gray-700">
-              <li>✔ Focus only on things that matter</li>
-              <li>✔ No time wasted on irrelevant topics</li>
-              <li>✔ Personalized learning journey</li>
-              <li>✔ Easy course correction</li>
+              <li>✔ 	You need not to waste time on things that don’t matter to you. </li>
+              <li>✔ 	You can focus only on the things that matter in your scheme of things. </li>
+              <li>✔	As you are the one who has designed your TTT CUP, you feel more engaged. </li>
+              <li>✔ 	It’s very easy to do the course correction, if one is required. </li>
             </ul>
           </div>
 
@@ -138,18 +139,49 @@ const Courses = () => {
 
         </div>
 
-        {/* FINAL MESSAGE */}
-        <div className="text-center mt-20">
+   
+   
 
-          <h2 className="text-3xl font-bold text-green-600 mb-4">
-            Drink the Wisdom from your TTT CUP
-          </h2>
+       
 
-          <p className="text-gray-700 text-lg">
-            And see the magic happening in your life 🙂
-          </p>
 
-        </div>
+        {/* How TTT Does This */}
+<div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition mt-12">
+
+  <h2 className="text-2xl font-bold text-indigo-600 mb-6 text-center">
+    Sounds exciting! So how exactly is TTT doing this?
+  </h2>
+
+  <p className="text-gray-700 leading-relaxed mb-4">
+    TTT has a big database comprising of a number of modules which cater to
+    diverse aspects of one’s personality and growth. These modules cover
+    various important areas of life such as maintaining good health,
+    overcoming stress, learning from failures, proper ways of prayer,
+    time management, dealing with change, financial literacy, screen
+    de-addiction, legal literacy, coping with peer pressure, soft skills,
+    communication skills, improving interpersonal relations, mastering the
+    art of body language, reducing the carbon footprint, mastering
+    professional skills, handling relationships, inculcating patriotic
+    feelings, subscribing to the right value system, becoming a good and
+    balanced human being, spirituality, academic excellence, and finding
+    your hidden talents.
+  </p>
+
+  <p className="text-gray-700 leading-relaxed mb-4">
+    Once you approach TTT, we do a detailed analysis of your personality
+    and requirements and provide you with the unique{" "}
+    <b>TTT MAP (Mindful Analysis of Personality)</b>. This TTT MAP gives
+    you the details of the important modules that you need so that your
+    personality becomes more holistic and growth-oriented.
+  </p>
+
+  <p className="text-gray-700 leading-relaxed mb-4">
+    Based upon this TTT MAP and your preferences, our team of experts
+    will design a unique <b>TTT CUP</b> for you.
+  </p>
+
+
+</div>
 
       </div>
 
@@ -157,4 +189,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default Courses; 

@@ -184,49 +184,63 @@ return (
  
  <div className="max-w-[550px] mx-auto flex flex-col md:flex-row items-center gap-3">
 
+<form
+  onSubmit={(e) => {
+    e.preventDefault();
+    const query = e.target.websiteSearch.value.trim();
+
+    if (!query) return;
+
+    navigate(`/search?q=${query}`);
+  }}
+  className="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full"
+>
+  <img
+    src={tttbaba}
+    alt="Search"
+    className="w-5 h-5 mr-2 opacity-70"
+  />
+
+  <input
+    type="text"
+    name="websiteSearch"
+    placeholder="Search our website..."
+    className="w-full outline-none bg-transparent text-sm"
+  />
+</form>
+
   {/* WEBSITE SEARCH */}
-  <form 
-    onSubmit={(e) => {
-      e.preventDefault();
-      const query = e.target.websiteSearch.value;
-      window.location.href = `/search?q=${query}`;
-    }}
-    className="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full"
-  >
-    <img
-      src={tttbaba}
-      alt="Search"
-      className="w-5 h-5 mr-2 opacity-70"
-    />
-    <input
-      type="text"
-      name="websiteSearch"
-      placeholder="Search our website..."
-      className="w-full outline-none bg-transparent text-sm"
-    />
-  </form>
+  
+
 
   {/* GOOGLE SEARCH */}
-  <form
-    onSubmit={(e) => {
-      e.preventDefault();
-      const query = e.target.googleSearch.value;
-      window.open(`https://www.google.com/search?q=${query}`, "_blank");
-    }}
-    className="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full"
-  >
-    <img
-      src="/google-icon.png"
-      alt="Google"
-      className="w-5 h-5 mr-2 opacity-70"
-    />
-    <input
-      type="text"
-      name="googleSearch"
-      placeholder="Search on Google..."
-      className="w-full outline-none bg-transparent text-sm"
-    />
-  </form>
+<form
+  onSubmit={(e) => {
+    e.preventDefault();
+
+    const query = e.target.googleSearch.value.trim();
+    if (!query) return;
+
+    window.open(
+      `https://www.google.com/search?q=${encodeURIComponent(query)}`,
+      "_blank"
+    );
+  }}
+  className="flex items-center bg-white rounded-full shadow-md px-4 py-2 w-full"
+>
+  <img
+    src="/google-icon.png"
+    alt="Google"
+    className="w-5 h-5 mr-2 opacity-70"
+  />
+
+  <input
+    type="text"
+    name="googleSearch"
+    placeholder="Search on Google..."
+    className="w-full outline-none bg-transparent text-sm"
+  />
+</form>
 
  
 <div className="relative">
