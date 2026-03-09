@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import big1 from "../../assets/bigimage/big1.jpeg";
 import big2 from "../../assets/bigimage/big2.jpeg";
 import big3 from "../../assets/bigimage/big3.jpeg";
@@ -9,6 +10,8 @@ import big7 from "../../assets/bigimage/big7.jpeg";
 
 const howtttdifferent = () => {
   const canvasRef = useRef(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,21 +24,15 @@ const howtttdifferent = () => {
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
-   const data = [
-  { text: "Choose from INFINITE Programs", color: "#49bad3", icon: "🌐", img: big1, h: 0 },
-
-  { text: "Enroll for Unique Programs", color: "#2d98b1", icon: "📋", img: big2, h: 0 },
-
-  { text: "Concept of Integration", color: "#406d85", icon: "⚙️", img: big3, h: 0 },
-
-  { text: "TTT MAP", color: "#4a5568", icon: "🗺️", img: big4, h: 0 },
-
-  { text: "ABCDL Model", color: "#f55a67", icon: "🖥️", img: big5, h: 0 },
-
-  { text: "Post Program Support", color: "#bc4b51", icon: "👤", img: big6, h: 0 },
-
-  { text: "Detailed Feedbacks", color: "#8b5e61", icon: "💬", img: big7, h: 0 }
-];
+    const data = [
+      { text: "Choose from INFINITE Programs", color: "#49bad3", icon: "🌐", img: big1, link: "/programs", h: 0 },
+      { text: "Enroll for Unique Programs", color: "#2d98b1", icon: "📋", img: big2, link: "/enroll", h: 0 },
+      { text: "Concept of Integration", color: "#406d85", icon: "⚙️", img: big3, link: "/integration", h: 0 },
+      { text: "TTT MAP", color: "#4a5568", icon: "🗺️", img: big4, link: "/map", h: 0 },
+      { text: "ABCDL Model", color: "#f55a67", icon: "🖥️", img: big5, link: "/abcdl", h: 0 },
+      { text: "Post Program Support", color: "#bc4b51", icon: "👤", img: big6, link: "/support", h: 0 },
+      { text: "Detailed Feedbacks", color: "#8b5e61", icon: "💬", img: big7, link: "/feedback", h: 0 }
+    ];
 
     const images = data.map(item => {
       const img = new Image();
@@ -232,31 +229,57 @@ const howtttdifferent = () => {
       let normA = angle < 0 ? angle + Math.PI * 2 : angle;
 
       if (dist > canvasW * 0.05 && dist < canvasW * 0.6 && normA >= Math.PI) {
-        hoveredIndex = Math.floor((normA - Math.PI) / (Math.PI / data.length));
+        const index = Math.floor((normA - Math.PI) / (Math.PI / data.length));
+        hoveredIndex = index;
+        setActiveItem(data[index]);
       } else {
         hoveredIndex = -1;
+        setActiveItem(null);
       }
     }
 
     canvas.addEventListener("mousemove", handle);
     canvas.addEventListener("touchstart", handle);
     canvas.addEventListener("touchmove", handle);
-    canvas.addEventListener("touchend", () => (hoveredIndex = -1));
+    canvas.addEventListener("touchend", () => {
+      hoveredIndex = -1;
+      setActiveItem(null);
+    });
 
     draw();
   }, []);
 
-  return (
+ return (
     <div className="flex justify-center items-center min-h-screen bg-white overflow-hidden font-sans">
-      <div className="relative w-[95vw] max-w-[1400px] aspect-[2/1.2] flex justify-center items-end">
-        <canvas ref={canvasRef} className="w-full h-full cursor-pointer touch-none" />
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[35%] aspect-[2/1] bg-white rounded-t-[1000px] shadow-[0_-15px_60px_rgba(0,0,0,0.1)] flex justify-center items-center text-center z-50 pointer-events-none">
-          <h1 className="text-black font-extrabold leading-tight text-[clamp(16px,3vw,34px)] pt-[10%]">
+      <div className="relative w-[95vw] max-w-[1400px] aspect-[2/1.2] flex justify-center items-end">
+
+        <canvas
+          ref={canvasRef}
+          className="w-full h-full cursor-pointer touch-none"
+        />
+
+        {/* CENTER SEMICIRCLE */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[35%] aspect-[2/1] bg-white rounded-t-[1000px] shadow-[0_-15px_60px_rgba(0,0,0,0.1)] flex flex-col justify-center items-center text-center z-50">
+
+          <h1 className="text-black font-extrabold leading-tight text-[clamp(16px,3vw,34px)]">
             How TTT <br /> is <br /> Different
           </h1>
+
+          {/* KNOW MORE BUTTON */}
+          {activeItem && (
+            <button
+              onClick={() => navigate(activeItem.link)}
+              className="mt-4 px-6 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              Know More →
+            </button>
+          )}
+
         </div>
+
       </div>
+
     </div>
   );
 };

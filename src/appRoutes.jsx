@@ -12,7 +12,7 @@ import TermsAndConditions from "./pages/termsandConditions";
 import ReturnRefund from "./pages/returnRefund";
 import PaymentForm from "./component/paymentForm";
 import Registration from "./pages/registration";
-
+  
 import SubjectCards from "./pages/subjectCards";
 import AboutPage from "./component/about/aboutpage";
 import Concept from "./component/about/concept";
@@ -27,6 +27,10 @@ import ForCorporates from "./component/whyjointtt/forCorporates";
 import ForParents from "./component/whyjointtt/forParents";
 import ContactUs from "./component/contactUs/contactusPage";
 import SearchResults from "./pages/searchResults";
+import FeedbackForm from "./component/contactUs/feedbackForm";
+import StudentFeedback from "./component/contactUs/studentFeedback";
+import ParentFeedback from "./component/contactUs/parentFeedback";
+
 
 function AppRoutes() {
   return (
@@ -83,9 +87,12 @@ function AppRoutes() {
 <Route path="/why/corporates" element={<ForCorporates/>}/>
 <Route path="/why/parents"element={<ForParents/>}/>
 
-{/* //About Us */}
+{/* Connact with Us */}
 
 <Route path="/connect/contact" element={<ContactUs/>}/>
+<Route path ="/connect/feedback" element={<FeedbackForm/>}/>
+<Route path="/connect/feedback/student" element={<StudentFeedback/>}/>
+<Route path="/connect/feedback/parent" element={<ParentFeedback/>}/>
 
 
 

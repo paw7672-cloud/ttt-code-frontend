@@ -154,14 +154,23 @@ useEffect(() => {
     },
   ],
 },
-{
-  name: "Connect with Us",
-  dropdown: [
-    { name: "Our Contact Details", path: "/connect/contact" },
-    { name: "Feedback", path: "/connect/feedback" },
-    { name: "Queries & Questions", path: "/connect/queries" },
-  ],
-},
+
+  {
+    name: "Connect with Us",
+    dropdown: [
+      { name: "Our Contact Details", path: "/connect/contact" },
+      {
+        name: "Feedback",
+        submenu: [
+          { name: "Student", path: "/connect/feedback/student" },
+          { name: "Parent", path: "/connect/feedback/parent" },
+          { name: "School", path: "/connect/feedback/school" },
+          { name: "Others", path: "/connect/feedback/others" },
+        ],
+      },
+      { name: "Queries & Questions", path: "/connect/queries" },
+    ],
+  },
 {
   name: "I Want to Be Rich",
   dropdown: [
@@ -179,8 +188,8 @@ useEffect(() => {
   ];
 
 return (
-  <header className="sticky top-0 z-50 bg-gradient-to-r from-[#FFD42A] to-[#FFC107] shadow-md px-3 py-1">
-<div className="w-full bg-gradient-to-r from-[#FFD42A] to-[#FFC107] py-0 px-0">
+  <header className="sticky top-0 z-50  shadow-md px-3 py-1 bg-gradient-to-r from-[#FFD42A] to-[#FFC107]">
+<div className=" fixedw-full bg-gradient-to-r from-[#FFD42A] to-[#FFC107] py-0 px-0">
  
  <div className="max-w-[550px] mx-auto flex flex-col md:flex-row items-center gap-3">
 
@@ -302,7 +311,7 @@ return (
                 </span>
 
                 {/* Stable Dropdown */}
-                <div
+              <div
   className="absolute left-0 top-full mt-3
   bg-gradient-to-br from-[#FFD42A] to-[#FFC107]
   shadow-2xl rounded-2xl py-4 w-72 z-50
@@ -312,19 +321,55 @@ return (
   transition-all duration-300"
 >
   {link.dropdown.map((item, i) => (
-    <NavLink
-      key={i}
-      to={item.path}
-      className="block px-5 py-2 rounded-lg
-      text-gray-900 font-medium
-      hover:bg-white hover:text-black
-      hover:shadow-md
-      transition-all duration-200"
-    >
-      {item.name}
-    </NavLink>
+
+    <div key={i} className="relative group/sub">
+
+      {/* NORMAL LINK */}
+      {!item.submenu ? (
+        <NavLink
+          to={item.path}
+          className="block px-5 py-2 rounded-lg
+          text-gray-900 font-medium
+          hover:bg-white hover:text-black
+          hover:shadow-md
+          transition-all duration-200"
+        >
+          {item.name}
+        </NavLink>
+      ) : (
+        <div className="px-5 py-2 rounded-lg text-gray-900 font-medium hover:bg-white hover:text-black cursor-pointer flex justify-between">
+          {item.name} →
+        </div>
+      )}
+
+      {/* SUBMENU */}
+      {item.submenu && (
+        <div
+          className="absolute left-full top-0 ml-2
+          bg-white shadow-xl rounded-xl py-2 w-60
+          opacity-0 invisible translate-x-3
+          group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0
+          transition-all duration-200"
+        >
+          {item.submenu.map((sub, j) => (
+            <NavLink
+              key={j}
+              to={sub.path}
+              className="block px-4 py-2 text-gray-800 hover:bg-yellow-100"
+            >
+              {sub.name}
+            </NavLink>
+          ))}
+        </div>
+      )}
+
+    </div>
+
   ))}
 </div>
+
+
+  
                   
 
               </div>
