@@ -27,9 +27,15 @@ import ForCorporates from "./component/whyjointtt/forCorporates";
 import ForParents from "./component/whyjointtt/forParents";
 import ContactUs from "./component/contactUs/contactusPage";
 import SearchResults from "./pages/searchResults";
-import FeedbackForm from "./component/contactUs/feedbackForm";
+import School from "./component/contactUs/school";
 import StudentFeedback from "./component/contactUs/studentFeedback";
 import ParentFeedback from "./component/contactUs/parentFeedback";
+import QueryQuestions from "./component/contactUs/queryQuestions";
+import Advertise from "./component/wantToRich/advertise";
+import JoinTTT from "./component/wantToRich/joinTtt";
+import ReferEarn from "./component/wantToRich/referEarn";
+import HelpOthers from "./component/wantToRich/helpOthers";
+
 
 
 function AppRoutes() {
@@ -66,6 +72,7 @@ function AppRoutes() {
         <Route path="/aboutus-introduction" element={<AboutPage />} />
         <Route path="/aboutus-vision" element={<AboutPage />} />
         <Route path="/aboutus-concept" element={<Concept/>}/>
+        <Route path="/connect/queries" element={<QueryQuestions/>}/>
 
  {/* How ttt different Routes? */}
 <Route path="/howdifferent" element={<Ttt />} />
@@ -90,11 +97,16 @@ function AppRoutes() {
 {/* Connact with Us */}
 
 <Route path="/connect/contact" element={<ContactUs/>}/>
-<Route path ="/connect/feedback" element={<FeedbackForm/>}/>
+
 <Route path="/connect/feedback/student" element={<StudentFeedback/>}/>
 <Route path="/connect/feedback/parent" element={<ParentFeedback/>}/>
+<Route path="/connect/feedback/school" element={<School/>}/>
 
-
+ {/* Want to Rich ? */}
+<Route path="/rich/advertise" element={<Advertise/>}/>
+<Route path="/rich/team" element={<JoinTTT/>}/>
+<Route path="/rich/refer" element={<ReferEarn/>}/>
+<Route path="/help-others" element={<HelpOthers/>}/>
 
 <Route path="/search" element={<SearchResults/>}/>
 

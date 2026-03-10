@@ -25,7 +25,7 @@ const SubjectCards = () => {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
           font-extrabold text-gray-900 mb-4 tracking-wide drop-shadow-lg"
         >
-          Online Olympiad++
+          Olympiad ++
         </h1>
 
         <h2
@@ -43,7 +43,6 @@ const SubjectCards = () => {
 
         {/* CARD */}
         <div
-          onClick={handleClick}
           className="relative group cursor-pointer 
           bg-white/40 backdrop-blur-2xl 
           border border-white/40 
@@ -80,7 +79,7 @@ const SubjectCards = () => {
             className="text-xl sm:text-2xl md:text-3xl 
             font-extrabold text-gray-900 mb-4"
           >
-            Online Olympiad (Classes 6–12)
+            Entrepreneurship Olympiad++
           </h2>
 
           {/* Description */}
@@ -95,8 +94,22 @@ const SubjectCards = () => {
           {/* Bottom Line */}
           <div
             className="w-20 h-1 bg-yellow-500 mx-auto 
-            rounded-full group-hover:w-32 transition-all duration-500"
+            rounded-full group-hover:w-32 transition-all duration-500 mb-6"
           ></div>
+
+          {/* REGISTER BUTTON (ADDED) */}
+          <div className="flex justify-center">
+            <button
+              onClick={handleClick}
+              className="px-8 py-3 text-lg font-bold text-black 
+              bg-gradient-to-r from-[#FFD42A] to-[#FFC107] 
+              rounded-full shadow-lg 
+              hover:scale-105 hover:shadow-xl 
+              transition-all duration-300"
+            >
+              Register Now
+            </button>
+          </div>
 
         </div>
 
