@@ -6,6 +6,7 @@ import authReducer from "./slice/authSlice.js";
 import certificateReducer from "./slice/certificateSlice.js";
 import adminReducer from "./slice/adminSlice.js";
 import themeReducer from "./slice/themeSlice.js";
+import examReducer from "./slice/examSlice.js";
 
 
 
@@ -14,6 +15,7 @@ export const store = configureStore({
     auth: authReducer,
     certificate: certificateReducer,
     admin: adminReducer,
+    exam: examReducer,
   theme: themeReducer,
 
 

@@ -35,6 +35,7 @@ import Advertise from "./component/wantToRich/advertise";
 import JoinTTT from "./component/wantToRich/joinTtt";
 import ReferEarn from "./component/wantToRich/referEarn";
 import HelpOthers from "./component/wantToRich/helpOthers";
+import ExamQuestions from "./question/ExamQuestion";
 
 
 
@@ -109,6 +110,15 @@ function AppRoutes() {
 <Route path="/help-others" element={<HelpOthers/>}/>
 
 <Route path="/search" element={<SearchResults/>}/>
+
+
+
+
+
+<Route
+  path="/exam-questions/:id"
+  element={<ExamQuestions />}
+/>
 
     </Routes>
   

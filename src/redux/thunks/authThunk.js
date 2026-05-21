@@ -36,3 +36,45 @@ export const loginUser = createAsyncThunk(
     }
   }
 );
+
+
+// =========================================
+// CREATE THUNK
+// FILE: redux/thunks/authThunk.js
+// =========================================
+
+
+
+// UPDATE PROFILE API
+
+export const updateProfile = createAsyncThunk(
+
+  "auth/updateProfile",
+
+  async ({ id, formData }, thunkAPI) => {
+
+    try {
+
+      const response = await axiosInstance.put(
+
+        `/auth/update/${id}`,
+
+        formData
+
+      );
+
+      return response.data;
+
+    } catch (error) {
+
+      return thunkAPI.rejectWithValue(
+
+        error.response?.data?.message || "Update Failed"
+
+      );
+
+    }
+
+  }
+
+);
